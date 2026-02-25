@@ -1,0 +1,161 @@
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --accent: #22c55e;
+  --dark: #0f172a;
+  --light-bg: #f8fafc;
+  --white: #ffffff;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: var(--light-bg);
+  color: var(--dark);
+  margin:0;
+}
+
+/* NAVBAR */
+.navbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 10%;
+  background: var(--white);
+  position: sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.nav-links {
+  display:flex;
+  gap:25px;
+  list-style:none;
+}
+
+.nav-links li a{
+  text-decoration:none;
+  color:var(--dark);
+  font-weight:600;
+  transition:0.3s;
+}
+
+.nav-links li a.active,
+.nav-links li a:hover{
+  color: var(--primary);
+}
+
+.menu-toggle{
+  display:none;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* BLOG */
+.blog{
+  padding:80px 10%;
+}
+
+.section-title{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:50px;
+  font-weight:900;
+}
+
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.blog-card{
+  background: var(--white);
+  border-radius:15px;
+  overflow:hidden;
+  text-align:center;
+  box-shadow:0 8px 25px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.blog-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.blog-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.blog-card h3{
+  margin:15px 0 10px;
+}
+
+.blog-card p{
+  padding:0 10px 20px;
+  font-size:14px;
+  color:var(--dark);
+}
+
+/* .blog-card .btn{
+  text-decoration:none;
+  padding:;
+  margin-bottom: 50px;
+  border-radius:8px;
+  background: #2563eb;
+  color: #fff;
+  margin-top: 200px;
+} */
+
+/* FOOTER */
+footer{
+  background: var(--dark);
+  color: var(--white);
+  padding:50px 10%;
+  margin-top:50px;
+}
+
+.footer-columns{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:30px;
+}
+
+footer a{
+  color:#cbd5e1;
+  display:block;
+  margin-bottom:8px;
+  transition:0.3s;
+}
+
+footer a:hover{
+  color: var(--accent);
+}
+
+/* RESPONSIVE */
+@media(max-width:991px){
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:70px;
+    right:5%;
+    background:#fff;
+    width:220px;
+    border-radius:8px;
+    padding:10px 0;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  }
+  .nav-links.show{
+    display:flex;
+  }
+  .menu-toggle{
+    display:block;
+  }
+  .blog-grid{
+    grid-template-columns:1fr;
+  }
+}

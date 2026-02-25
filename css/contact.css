@@ -1,0 +1,146 @@
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --accent: #22c55e;
+  --dark: #0f172a;
+  --light-bg: #f8fafc;
+  --white: #ffffff;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: var(--light-bg);
+  color: var(--dark);
+  margin:0;
+}
+
+/* NAVBAR */
+.navbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 10%;
+  background: var(--white);
+  position: sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.nav-links {
+  display:flex;
+  gap:25px;
+  list-style:none;
+}
+
+.nav-links li a{
+  text-decoration:none;
+  color:var(--dark);
+  font-weight:600;
+  transition:0.3s;
+}
+
+.nav-links li a.active,
+.nav-links li a:hover{
+  color: var(--primary);
+}
+
+.menu-toggle{
+  display:none;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* CONTACT */
+.contact{
+  padding:80px 10%;
+  max-width:700px;
+  margin:auto;
+}
+
+.contact form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.contact input,
+.contact textarea{
+  padding:12px 15px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:14px;
+  outline:none;
+  transition:0.3s;
+}
+
+.contact input:focus,
+.contact textarea:focus{
+  border-color: var(--primary);
+}
+
+.contact button{
+  background: var(--primary);
+  color: var(--white);
+  border:none;
+  padding:12px 20px;
+  border-radius:8px;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.contact button:hover{
+  background: var(--primary-dark);
+}
+
+/* FOOTER */
+footer{
+  background: var(--dark);
+  color: var(--white);
+  padding:50px 10%;
+  margin-top:50px;
+}
+
+.footer-columns{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:30px;
+}
+
+footer a{
+  color:#cbd5e1;
+  display:block;
+  margin-bottom:8px;
+  transition:0.3s;
+}
+
+footer a:hover{
+  color: var(--accent);
+}
+
+/* RESPONSIVE */
+@media(max-width:991px){
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:70px;
+    right:5%;
+    background:#fff;
+    width:220px;
+    border-radius:8px;
+    padding:10px 0;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  }
+  .nav-links.show{
+    display:flex;
+  }
+  .menu-toggle{
+    display:block;
+  }
+  .contact{
+    padding:60px 5%;
+  }
+}
